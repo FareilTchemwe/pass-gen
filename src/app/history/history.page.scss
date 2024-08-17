@@ -1,0 +1,32 @@
+.password-list {
+  margin-top: 15px;
+}
+
+.password-item {
+  --background: #2c2c2c;
+  --border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7);
+}
+
+.password-item ion-label {
+  font-family: monospace;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+ion-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+ion-button {
+  margin-top: 10px;
+}
+
+ion-icon {
+  color: #ffffff;
+}
