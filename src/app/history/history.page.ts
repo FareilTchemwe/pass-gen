@@ -35,7 +35,7 @@ export class HistoryPage implements OnInit {
   async clearHistory() {
     this.variables.gen_alert(
       'Clear History?',
-      "Warning! You're about to clear all your saved passwords. This cannot be undo. Continue?",
+      "Warning! You're about to clear all your saved passwords. This cannot be undone. Continue?",
       [
         {
           text: 'No',
