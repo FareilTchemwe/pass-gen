@@ -1,0 +1,7 @@
+{
+  "name": "password-generator-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
