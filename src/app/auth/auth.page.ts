@@ -23,21 +23,31 @@ export class AuthPage {
       const available = await NativeBiometric.isAvailable();
 
       if (available.isAvailable) {
-        // Perform the biometric authentication
+        // Perform biometric authentication if available
         await NativeBiometric.verifyIdentity({
           reason: 'Please authenticate to continue',
-          title: 'Biometric Authentication',
-          subtitle: 'Log in using your biometric credentials',
+          title: 'Authentication Required',
+          subtitle: 'Log in using your credentials',
+          useFallback: true, // This will use device credentials if biometric fails
         });
 
         // Authentication successful
         this.navCtrl.navigateForward('/tabs');
       } else {
-        this.variable.gen_alert('Not Available!!','Biometric authentication is not available on this device');
+        // Biometric not available, fallback to device credentials
+        await NativeBiometric.verifyIdentity({
+          reason: 'Please authenticate to continue',
+          title: 'Authentication Required',
+          subtitle: 'Log in using your credentials',
+          useFallback: true, // This will trigger the device's lock screen (pattern/PIN/password)
+        });
+
+        // Fallback authentication successful
+        this.navCtrl.navigateForward('/tabs');
       }
     } catch (error) {
       // Authentication failed or an error occurred
-      this.variable.gen_alert('Error!!','Authentication failed');
+      this.variable.gen_alert('Error!!', 'Authentication failed');
     }
   }
 }

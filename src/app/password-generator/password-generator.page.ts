@@ -46,7 +46,7 @@ export class PasswordGeneratorPage {
     });
 
     // Navigate to the history page
-    this.navCtrl.navigateForward('/history');
+    this.navCtrl.navigateForward('/tabs/history');
   }
 
   async loadPasswords() {
