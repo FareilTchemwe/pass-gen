@@ -47,7 +47,7 @@ export class AuthPage {
       }
     } catch (error) {
       // Authentication failed or an error occurred
-      this.variable.gen_alert('Error!!', 'Authentication failed');
+      // this.variable.gen_alert('Error!!', 'Authentication failed');
     }
   }
 }
